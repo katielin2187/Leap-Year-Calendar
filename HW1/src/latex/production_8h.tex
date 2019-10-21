@@ -1,0 +1,106 @@
+\section{production.\+h File Reference}
+\label{production_8h}\index{production.\+h@{production.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ production} (int argc, char $\ast$argv[$\,$])
+\item 
+int \textbf{ calculate\+\_\+days\+\_\+in\+\_\+month} (int year, int month)
+\item 
+int \textbf{ is\+\_\+leap\+\_\+year} (int year)
+\item 
+int \textbf{ calculate\+\_\+day\+\_\+of\+\_\+week} (int day, int month, int year)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\label{production_8h_a366627f8be4bdb2683a04ca7254d9a2c}} 
+\index{production.\+h@{production.\+h}!calculate\+\_\+day\+\_\+of\+\_\+week@{calculate\+\_\+day\+\_\+of\+\_\+week}}
+\index{calculate\+\_\+day\+\_\+of\+\_\+week@{calculate\+\_\+day\+\_\+of\+\_\+week}!production.\+h@{production.\+h}}
+\subsubsection{calculate\+\_\+day\+\_\+of\+\_\+week()}
+{\footnotesize\ttfamily int calculate\+\_\+day\+\_\+of\+\_\+week (\begin{DoxyParamCaption}\item[{int}]{day,  }\item[{int}]{month,  }\item[{int}]{year }\end{DoxyParamCaption})}
+
+Determines what day of the week a particular date falls on. 
+\begin{DoxyParams}{Parameters}
+{\em day} & Day of the month, counting from 1. \\
+\hline
+{\em month} & Range 0 through 11, where January = 0. \\
+\hline
+{\em year} & The year. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 for invalid input (e.\+g., year $<$ 1752, month out of range, day $<$ 1 or $>$ appropriate for that month \& year 0 through 6, where Sunday = 0. 
+\end{DoxyReturn}
+
+
+Referenced by production(), and test\+Calc\+Day\+Of\+Week().
+
+\mbox{\label{production_8h_a0b9793f3dff701e2a9903c8539328ad4}} 
+\index{production.\+h@{production.\+h}!calculate\+\_\+days\+\_\+in\+\_\+month@{calculate\+\_\+days\+\_\+in\+\_\+month}}
+\index{calculate\+\_\+days\+\_\+in\+\_\+month@{calculate\+\_\+days\+\_\+in\+\_\+month}!production.\+h@{production.\+h}}
+\subsubsection{calculate\+\_\+days\+\_\+in\+\_\+month()}
+{\footnotesize\ttfamily int calculate\+\_\+days\+\_\+in\+\_\+month (\begin{DoxyParamCaption}\item[{int}]{year,  }\item[{int}]{month }\end{DoxyParamCaption})}
+
+Calculates how many days are in a given month for a given year. 
+\begin{DoxyParams}{Parameters}
+{\em year} & The year we are checking. \\
+\hline
+{\em month} & The month we are checking. Range 0 through 11, where January = 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Day of the week. Range 0 through 6, where Sunday = 0. -\/1 if invalid input (e.\+g., year $<$ 1752, month out of range). 
+\end{DoxyReturn}
+
+
+References is\+\_\+leap\+\_\+year().
+
+
+
+Referenced by production(), and test\+Calc\+Days\+In\+Month().
+
+\mbox{\label{production_8h_a89b1fdc34c29bc50b397019f5e32f7af}} 
+\index{production.\+h@{production.\+h}!is\+\_\+leap\+\_\+year@{is\+\_\+leap\+\_\+year}}
+\index{is\+\_\+leap\+\_\+year@{is\+\_\+leap\+\_\+year}!production.\+h@{production.\+h}}
+\subsubsection{is\+\_\+leap\+\_\+year()}
+{\footnotesize\ttfamily int is\+\_\+leap\+\_\+year (\begin{DoxyParamCaption}\item[{int}]{year }\end{DoxyParamCaption})}
+
+Test if a given year is a leap year or not. 
+\begin{DoxyParams}{Parameters}
+{\em year} & The year we are testing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if it is a valid leap year. 0 if a valid year, but not a leap year. -\/1 if not a valid year (i.\+e. before the calendar rule changed in 1752). 
+\end{DoxyReturn}
+
+
+Referenced by calculate\+\_\+days\+\_\+in\+\_\+month(), and test\+Is\+Leap\+Year().
+
+\mbox{\label{production_8h_a9f67b51c42a54745557e7a2c9c07c46f}} 
+\index{production.\+h@{production.\+h}!production@{production}}
+\index{production@{production}!production.\+h@{production.\+h}}
+\subsubsection{production()}
+{\footnotesize\ttfamily bool production (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv[$\,$] }\end{DoxyParamCaption})}
+
+Your production code goes in this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of words on the command line \\
+\hline
+{\em argv} & Array of pointers to character strings representing the words on the command line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if Program was able to print a calendar. false if User entered bad input. 
+\end{DoxyReturn}
+
+
+References calculate\+\_\+day\+\_\+of\+\_\+week(), calculate\+\_\+days\+\_\+in\+\_\+month(), print\+\_\+days(), and print\+\_\+month().
+
+
+
+Referenced by main().
+

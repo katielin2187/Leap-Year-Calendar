@@ -1,0 +1,147 @@
+\section{production.\+c File Reference}
+\label{production_8c}\index{production.\+c@{production.\+c}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}production.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ production} (int argc, char $\ast$argv[$\,$])
+\item 
+void \textbf{ print\+\_\+days} (int days\+\_\+in\+\_\+month, int day\+\_\+of\+\_\+week)
+\item 
+int \textbf{ calculate\+\_\+days\+\_\+in\+\_\+month} (int year, int month)
+\item 
+int \textbf{ is\+\_\+leap\+\_\+year} (int year)
+\item 
+int \textbf{ calculate\+\_\+day\+\_\+of\+\_\+week} (int day, int month, int year)
+\item 
+void \textbf{ print\+\_\+month} (int month)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\label{production_8c_a366627f8be4bdb2683a04ca7254d9a2c}} 
+\index{production.\+c@{production.\+c}!calculate\+\_\+day\+\_\+of\+\_\+week@{calculate\+\_\+day\+\_\+of\+\_\+week}}
+\index{calculate\+\_\+day\+\_\+of\+\_\+week@{calculate\+\_\+day\+\_\+of\+\_\+week}!production.\+c@{production.\+c}}
+\subsubsection{calculate\+\_\+day\+\_\+of\+\_\+week()}
+{\footnotesize\ttfamily int calculate\+\_\+day\+\_\+of\+\_\+week (\begin{DoxyParamCaption}\item[{int}]{day,  }\item[{int}]{month,  }\item[{int}]{year }\end{DoxyParamCaption})}
+
+Determines what day of the week a particular date falls on. 
+\begin{DoxyParams}{Parameters}
+{\em day} & Day of the month, counting from 1. \\
+\hline
+{\em month} & Range 0 through 11, where January = 0. \\
+\hline
+{\em year} & The year. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 for invalid input (e.\+g., year $<$ 1752, month out of range, day $<$ 1 or $>$ appropriate for that month \& year 0 through 6, where Sunday = 0. 
+\end{DoxyReturn}
+
+
+Referenced by production(), and test\+Calc\+Day\+Of\+Week().
+
+\mbox{\label{production_8c_a0b9793f3dff701e2a9903c8539328ad4}} 
+\index{production.\+c@{production.\+c}!calculate\+\_\+days\+\_\+in\+\_\+month@{calculate\+\_\+days\+\_\+in\+\_\+month}}
+\index{calculate\+\_\+days\+\_\+in\+\_\+month@{calculate\+\_\+days\+\_\+in\+\_\+month}!production.\+c@{production.\+c}}
+\subsubsection{calculate\+\_\+days\+\_\+in\+\_\+month()}
+{\footnotesize\ttfamily int calculate\+\_\+days\+\_\+in\+\_\+month (\begin{DoxyParamCaption}\item[{int}]{year,  }\item[{int}]{month }\end{DoxyParamCaption})}
+
+Calculates how many days are in a given month for a given year. 
+\begin{DoxyParams}{Parameters}
+{\em year} & The year we are checking. \\
+\hline
+{\em month} & The month we are checking. Range 0 through 11, where January = 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Day of the week. Range 0 through 6, where Sunday = 0. -\/1 if invalid input (e.\+g., year $<$ 1752, month out of range). 
+\end{DoxyReturn}
+
+
+References is\+\_\+leap\+\_\+year().
+
+
+
+Referenced by production(), and test\+Calc\+Days\+In\+Month().
+
+\mbox{\label{production_8c_a89b1fdc34c29bc50b397019f5e32f7af}} 
+\index{production.\+c@{production.\+c}!is\+\_\+leap\+\_\+year@{is\+\_\+leap\+\_\+year}}
+\index{is\+\_\+leap\+\_\+year@{is\+\_\+leap\+\_\+year}!production.\+c@{production.\+c}}
+\subsubsection{is\+\_\+leap\+\_\+year()}
+{\footnotesize\ttfamily int is\+\_\+leap\+\_\+year (\begin{DoxyParamCaption}\item[{int}]{year }\end{DoxyParamCaption})}
+
+Test if a given year is a leap year or not. 
+\begin{DoxyParams}{Parameters}
+{\em year} & The year we are testing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if it is a valid leap year. 0 if a valid year, but not a leap year. -\/1 if not a valid year (i.\+e. before the calendar rule changed in 1752). 
+\end{DoxyReturn}
+
+
+Referenced by calculate\+\_\+days\+\_\+in\+\_\+month(), and test\+Is\+Leap\+Year().
+
+\mbox{\label{production_8c_a52a2bceec80c444cd275fdaac71f01f3}} 
+\index{production.\+c@{production.\+c}!print\+\_\+days@{print\+\_\+days}}
+\index{print\+\_\+days@{print\+\_\+days}!production.\+c@{production.\+c}}
+\subsubsection{print\+\_\+days()}
+{\footnotesize\ttfamily void print\+\_\+days (\begin{DoxyParamCaption}\item[{int}]{days\+\_\+in\+\_\+month,  }\item[{int}]{day\+\_\+of\+\_\+week }\end{DoxyParamCaption})}
+
+Prints out the days in each given month. 
+\begin{DoxyParams}{Parameters}
+{\em days\+\_\+in\+\_\+month} & How many days are in a given month for a given year. \\
+\hline
+{\em day\+\_\+of\+\_\+week} & The day of the week a particular date falls on. \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by production().
+
+\mbox{\label{production_8c_a34310537187ec4eccf481cbaad317e45}} 
+\index{production.\+c@{production.\+c}!print\+\_\+month@{print\+\_\+month}}
+\index{print\+\_\+month@{print\+\_\+month}!production.\+c@{production.\+c}}
+\subsubsection{print\+\_\+month()}
+{\footnotesize\ttfamily void print\+\_\+month (\begin{DoxyParamCaption}\item[{int}]{month }\end{DoxyParamCaption})}
+
+Print the months for the calendar 
+\begin{DoxyParams}{Parameters}
+{\em month} & The index of the month that needs to be printed. Range 0 through 11, where January = 0. \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by production().
+
+\mbox{\label{production_8c_a9f67b51c42a54745557e7a2c9c07c46f}} 
+\index{production.\+c@{production.\+c}!production@{production}}
+\index{production@{production}!production.\+c@{production.\+c}}
+\subsubsection{production()}
+{\footnotesize\ttfamily bool production (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv[$\,$] }\end{DoxyParamCaption})}
+
+Your production code goes in this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of words on the command line \\
+\hline
+{\em argv} & Array of pointers to character strings representing the words on the command line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if Program was able to print a calendar. false if User entered bad input. 
+\end{DoxyReturn}
+
+
+References calculate\+\_\+day\+\_\+of\+\_\+week(), calculate\+\_\+days\+\_\+in\+\_\+month(), print\+\_\+days(), and print\+\_\+month().
+
+
+
+Referenced by main().
+
